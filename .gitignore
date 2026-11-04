@@ -1,0 +1,27 @@
+# Dependencies and build output
+node_modules/
+target/
+dist/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.tsbuildinfo
+# Local credentials and private runtime data
+.env
+.env.*
+!.env.example
+**/config/servers_config.json
+**/multi-agents/data/
+uploads/
+*.db
+*.db-*
+*.sqlite*
+content/backup-content-*.json
+# Local tools, reports and editor files
+.tools/
+output/
+.idea/
+.vscode/
+.DS_Store
+*.log

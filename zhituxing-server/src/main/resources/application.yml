@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: zhituxing-server
+  datasource:
+    url: jdbc:mysql://localhost:${MYSQL_PORT:3307}/zhituxing?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    username: ${MYSQL_USER:root}
+    password: ${MYSQL_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 20MB
+
+zhituxing:
+  jwt:
+    # 生产环境请通过环境变量覆盖
+    secret: ${JWT_SECRET}
+    expire-hours: 2
+  upload:
+    dir: ./uploads
